@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/poly-engine/static/css/main.b869a55b.css",
+    "main.js": "/poly-engine/static/js/main.67f029ea.js",
+    "index.html": "/poly-engine/index.html",
+    "main.b869a55b.css.map": "/poly-engine/static/css/main.b869a55b.css.map",
+    "main.67f029ea.js.map": "/poly-engine/static/js/main.67f029ea.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b869a55b.css",
+    "static/js/main.67f029ea.js"
+  ]
+}
