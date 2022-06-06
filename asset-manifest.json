@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/poly-engine/static/css/main.b869a55b.css",
-    "main.js": "/poly-engine/static/js/main.67f029ea.js",
+    "main.css": "/poly-engine/static/css/main.2ee0a961.css",
+    "main.js": "/poly-engine/static/js/main.1da6357a.js",
     "index.html": "/poly-engine/index.html",
-    "main.b869a55b.css.map": "/poly-engine/static/css/main.b869a55b.css.map",
-    "main.67f029ea.js.map": "/poly-engine/static/js/main.67f029ea.js.map"
+    "main.2ee0a961.css.map": "/poly-engine/static/css/main.2ee0a961.css.map",
+    "main.1da6357a.js.map": "/poly-engine/static/js/main.1da6357a.js.map"
   },
   "entrypoints": [
-    "static/css/main.b869a55b.css",
-    "static/js/main.67f029ea.js"
+    "static/css/main.2ee0a961.css",
+    "static/js/main.1da6357a.js"
   ]
 }
