@@ -133,6 +133,13 @@ const ENGINES = [
     { name: 'ArchWiki', url: 'https://wiki.archlinux.org/index.php?search=' },
     { name: 'GitHub', url: 'https://github.com/search?q=' },
     { name: 'Odysee', url: 'https://odysee.com/$/search?q=' },
+    { name: 'Reddit', url: 'https://www.reddit.com/search/?q=' },
+    { name: 'Wiby', url: 'https://wiby.me/?q=' },
+    { name: 'Startpage', url: 'https://www.startpage.com/rvd/search?query=' },
+    { name: 'Nitter', url: 'https://nitter.net/search?q=' },
+    { name: 'SearX', url: 'https://searx.org/search?q=' },
+    { name: 'GitLab', url: 'https://gitlab.com/search?search=' },
+    { name: 'Thesaurus', url: 'https://www.thesaurus.com/browse/' },
 ]
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
