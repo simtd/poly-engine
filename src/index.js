@@ -1,5 +1,6 @@
 import { SearchBar } from './searchbar.js'
 import { ListEngines } from './listengines.js'
+import { MenuBar } from './menu.js'
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -22,12 +23,6 @@ class App extends React.Component {
     openUrl(url, urlSuffix) {
         window.open(url + urlSuffix);
     }
-
-    // getEngineNames() {
-    //     return Object.values(this.props.engines).map(
-    //         (engine) => engine.name
-    //     ).sort();
-    // }
 
     getUrl(engineName) {
         const engineIdx = this.props.engines.findIndex(
@@ -107,25 +102,23 @@ class App extends React.Component {
             <div className="app">
                 <div className="search-bar">
                     <SearchBar
-                        engineSelected={this.state.engineSelected}
                         currentEngine={this.state.currentEngine}
-
+                        engineSelected={this.state.engineSelected}
                         formValue={this.state.inputText}
                         handleFormInput={this.handleFormInput}
                         handleSearch={this.handleSearch}
                     />
-                    <div className="menu">
-                        <button>❓</button>
-                        <button>⚙️</button>
-                    </div>
+
+                    <MenuBar />
                 </div>
-                <div className="engine-list">
+                <div className='engine-list'>
                     <ListEngines
                         engineSelected={this.state.engineSelected}
                         engines={this.state.currentEngineNames}
                     />
                 </div>
-            </div>
+
+            </div >
         );
     }
 }

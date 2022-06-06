@@ -32,8 +32,8 @@ class SearchBar extends React.Component {
         return (
             <form className='form' onSubmit={this.handleSubmit}>
                 <input
-                    type="text"
                     placeholder={this.placeholderText()}
+                    type="text"
                     value={this.props.formValue}
                     onChange={this.handleFilterTextChange}
                     autoFocus
