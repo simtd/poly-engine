@@ -42,7 +42,9 @@
     scrollbar-width: none;
 }
 
-.search-bar {
+/* ------------------------------------------------- */
+
+.input-bar {
     border: solid black 1px;
     border-radius: var(--main-radius);
     display: inline-flex;
@@ -53,7 +55,7 @@
     /* margin: var(--main-margin); */
 }
 
-.search-bar form {
+.input-bar form {
     margin: 10px;
     width: 100%;
     border-width: 0;
@@ -61,7 +63,7 @@
     display: flex;
 }
 
-.search-bar input {
+.input-bar input {
     border-radius: var(--main-radius);
     border-style: none;
     outline-style: none;
@@ -71,41 +73,53 @@
     flex: 1;
 }
 
-.engine-list ul {
-    display: flex;
-    flex-wrap: wrap;
-    /* flex-direction: column; */
-    align-items: center;
-}
-
-.engine-list li {
-    font-weight: 400;
-    flex: 1;
-    min-width: 10%;
-    margin: calc(var(--main-margin)*2);
-    text-align: center;
-    border-radius: var(--main-radius);
-    padding: var(--main-padding);
-    background-color: whitesmoke;
-    list-style-type: none;
-}
-
-.engine-list li:first-child {
-    background-color: lightblue;
-}
-
-.menu {
+.bar-buttons {
     margin: var(--main-margin);
     font-size: small;
-}
-
-.menu-buttons {
     margin: var(--main-margin);
     float: right;
 }
 
-.menu-buttons button {
+.bar-buttons button {
     margin: var(--main-margin);
     border: none;
     background-color: inherit;
+}
+
+/* ------------------------------------------------- */
+
+.cards ul {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    margin: var(--main-margin);
+    align-items: center;
+}
+
+.cards li {
+    font-weight: 400;
+    flex: 1;
+    /* width: fit-content; */
+    max-width: 15%;
+    /* min-width: 10%; */
+    margin: calc(var(--main-margin)*2);
+    text-align: center;
+    border-radius: var(--main-radius);
+    padding: var(--main-padding);
+    background-color: gainsboro;
+    list-style-type: none;
+    /* display: inline-flex; */
+}
+
+.cards img {
+    height: 20px;
+    width: auto;
+    margin: var(--main-margin);
+    padding: 5px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.cards li:first-child {
+    background-color: lightblue;
 }

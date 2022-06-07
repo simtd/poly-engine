@@ -1,6 +1,5 @@
-import { SearchBar } from './searchbar.js'
-import { ListEngines } from './listengines.js'
-import { MenuBar } from './menu.js'
+import { InputBar } from './inputbar.js'
+import { Cards } from './cards.js'
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -100,19 +99,15 @@ class App extends React.Component {
         console.log("rendered")
         return (
             <div className="app">
-                <div className="search-bar">
-                    <SearchBar
-                        currentEngine={this.state.currentEngine}
-                        engineSelected={this.state.engineSelected}
-                        formValue={this.state.inputText}
-                        handleFormInput={this.handleFormInput}
-                        handleSearch={this.handleSearch}
-                    />
-
-                    <MenuBar />
-                </div>
-                <div className='engine-list'>
-                    <ListEngines
+                <InputBar
+                    currentEngine={this.state.currentEngine}
+                    engineSelected={this.state.engineSelected}
+                    formValue={this.state.inputText}
+                    handleFormInput={this.handleFormInput}
+                    handleSearch={this.handleSearch}
+                />
+                <div className='cards'>
+                    <Cards
                         engineSelected={this.state.engineSelected}
                         engines={this.state.currentEngineNames}
                     />
@@ -140,15 +135,16 @@ const ENGINES = [
     { name: 'SearX', url: 'https://searx.org/search?q=' },
     { name: 'GitLab', url: 'https://gitlab.com/search?search=' },
     { name: 'Thesaurus', url: 'https://www.thesaurus.com/browse/' },
+    { name: 'Substack', url: 'https://substack.com/search/' },
 ]
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <App
         engines={ENGINES}
+        defaultEngine='Qwant'
         allEngineNames={
             Object.values(ENGINES).map((engine) => engine.name).sort()
         }
-        defaultEngine='Qwant'
     />
 );

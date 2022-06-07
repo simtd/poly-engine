@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SearchBar extends React.Component {
+class InputBar extends React.Component {
     constructor(props) {
         super(props);
         this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
@@ -30,17 +30,23 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <form className='form' onSubmit={this.handleSubmit}>
-                <input
-                    placeholder={this.placeholderText()}
-                    type="text"
-                    value={this.props.formValue}
-                    onChange={this.handleFilterTextChange}
-                    autoFocus
-                />
-            </form>
+            <div className="input-bar">
+                <form className='form' onSubmit={this.handleSubmit}>
+                    <input
+                        placeholder={this.placeholderText()}
+                        type="text"
+                        value={this.props.formValue}
+                        onChange={this.handleFilterTextChange}
+                        autoFocus
+                    />
+                </form>
+                <div className="bar-buttons">
+                    <button>❓</button>
+                    <button>⚙️</button>
+                </div>
+            </div >
         );
     };
 }
 
-export { SearchBar }
+export { InputBar }
