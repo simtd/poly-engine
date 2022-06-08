@@ -11,7 +11,6 @@ class App extends React.Component {
         this.state = {
             inputText: '',
             currentEngineNames: this.props.allEngineNames,
-            currentEngine: this.props.defaultEngine,
             engineSelected: false,
         };
 
@@ -19,8 +18,21 @@ class App extends React.Component {
         this.handleSearch = this.handleSearch.bind(this);
     }
 
-    openUrl(url, urlSuffix) {
-        window.open(url + urlSuffix);
+    // search is to be used with urls like https://www.qwant.com/?q=
+    search(url, query) {
+        let urlMod = '';
+        let queryMod = query.trim(); // Removing outer whitespace
+
+        if (queryMod === '') {
+            // Go to home page if query is empty
+            const arr = url.split('/');
+            arr.pop();
+            urlMod = arr.join('/');
+        } else {
+            urlMod = url;
+        };
+
+        window.open(urlMod + queryMod);
     }
 
     getUrl(engineName) {
@@ -32,28 +44,29 @@ class App extends React.Component {
     }
 
     handleFormInput(input) {
-        let names = this.props.allEngineNames;
+        if (!this.state.engineSelected) {
+            let names = this.props.allEngineNames;
 
-        if (!this.state.engineSelected && input !== '') {
-            let coupling = [];
-            for (let name of names) {
-                const idx = name.toLowerCase().replace(/ /g, '').indexOf(
-                    input.toLowerCase()
-                );
+            if (input !== '') {
+                let coupling = [];
+                for (let name of names) {
+                    const idx = name.toLowerCase().indexOf(
+                        input.toLowerCase()
+                    );
 
-                if (idx !== -1) {
-                    coupling.push({ name: name, index: idx })
+                    if (idx !== -1) {
+                        coupling.push({ name: name, index: idx })
+                    };
                 };
-            };
 
-            coupling.sort(function (a, b) { return a.index - b.index });
-            names = coupling.map((item) => item.name);
+                coupling.sort(function (a, b) { return a.index - b.index });
+                names = coupling.map((item) => item.name);
+            }
+
+            this.setState({ currentEngineNames: names });
         };
 
-        this.setState({
-            currentEngineNames: names,
-            inputText: input
-        });
+        this.setState({ inputText: input });
     }
 
     handleSearch() {
@@ -61,47 +74,36 @@ class App extends React.Component {
             let engine = this.state.currentEngineNames[0];
 
             if (!engine) { // Search with default engine
-                this.openUrl(
+                this.search(
                     this.getUrl(this.props.defaultEngine),
                     this.state.inputText
                 );
+
+                this.setState({ currentEngineNames: this.props.allEngineNames })
             } else { // Set selected engine
-                this.setState({
-                    engineSelected: true,
-                    currentEngine: engine,
-                });
+                this.setState({ engineSelected: true });
             };
+
         } else { // Search with already selected engine
-            let url = this.getUrl(this.state.currentEngine);
-
-            if (this.state.inputText === '') {
-                // Go to home page if query is empty
-                const arr = url.split('/');
-                arr.pop()
-                url = arr.join('/');
-            };
-
-            this.openUrl(url, this.state.inputText);
-
+            let url = this.getUrl(this.state.currentEngineNames[0]);
+            this.search(url, this.state.inputText);
             this.setState({
                 engineSelected: false,
-                currentEngine: this.props.defaultEngine,
+                currentEngineNames: this.props.allEngineNames
             });
         };
 
-        this.setState({
-            inputText: '',
-            currentEngineNames: this.props.allEngineNames
-        });
+        this.setState({ inputText: '' });
     }
 
     render() {
-        console.log("rendered")
         return (
             <div className="app">
                 <InputBar
-                    currentEngine={this.state.currentEngine}
+                    currentEngine={this.state.currentEngineNames[0]}
+                    defaultEngine={this.props.defaultEngine}
                     engineSelected={this.state.engineSelected}
+
                     formValue={this.state.inputText}
                     handleFormInput={this.handleFormInput}
                     handleSearch={this.handleSearch}
@@ -118,25 +120,7 @@ class App extends React.Component {
     }
 }
 
-const ENGINES = [
-    { name: 'Qwant', url: 'https://www.qwant.com/?q=' },
-    { name: 'Brave', url: 'https://search.brave.com/search?q=' },
-    { name: 'DuckDuckGo', url: 'https://duckduckgo.com/?q=' },
-    { name: 'YouTube', url: 'https://www.youtube.com/results?search_query=' },
-    { name: 'eBay', url: 'https://www.ebay.com/sch/i.html?&_nkw=' },
-    { name: 'Stack Overflow', url: 'https://stackoverflow.com/search?q=' },
-    { name: 'ArchWiki', url: 'https://wiki.archlinux.org/index.php?search=' },
-    { name: 'GitHub', url: 'https://github.com/search?q=' },
-    { name: 'Odysee', url: 'https://odysee.com/$/search?q=' },
-    { name: 'Reddit', url: 'https://www.reddit.com/search/?q=' },
-    { name: 'Wiby', url: 'https://wiby.me/?q=' },
-    { name: 'Startpage', url: 'https://www.startpage.com/rvd/search?query=' },
-    { name: 'Nitter', url: 'https://nitter.net/search?q=' },
-    { name: 'SearX', url: 'https://searx.org/search?q=' },
-    { name: 'GitLab', url: 'https://gitlab.com/search?search=' },
-    { name: 'Thesaurus', url: 'https://www.thesaurus.com/browse/' },
-    { name: 'Substack', url: 'https://substack.com/search/' },
-]
+const ENGINES = require("./engines.json");
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

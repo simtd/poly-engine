@@ -17,15 +17,17 @@ class InputBar extends React.Component {
     }
 
     placeholderText() {
-        let prefix = '';
+        let prefix, engine = '';
 
         if (this.props.engineSelected) {
             prefix = 'Search'
+            engine = this.props.currentEngine
         } else {
             prefix = 'Select engine or search'
+            engine = this.props.defaultEngine
         };
 
-        return prefix + ' ' + this.props.currentEngine;
+        return prefix + ' ' + engine;
     }
 
     render() {

@@ -1,0 +1,112 @@
+[
+    {
+        "name": "Qwant",
+        "url": "https://www.qwant.com/?q=",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "Brave",
+        "url": "https://search.brave.com/search?q=",
+        "exeption-favicon-url": "https://cdn.search.brave.com/serp/v1/static/brand/8eabe183f0d1f2cb3e2916b7b20c310efd196d740c8cecd341732fcd396fb665-apple-touch-icon.png"
+    },
+    {
+        "name": "DuckDuckGo",
+        "url": "https://duckduckgo.com/?q=",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/results?search_query=",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "eBay",
+        "url": "https://www.ebay.com/sch/i.html?&_nkw=",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "Stack Overflow",
+        "url": "https://stackoverflow.com/search?q=",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "ArchWiki",
+        "url": "https://wiki.archlinux.org/index.php?search=",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "GitHub",
+        "url": "https://github.com/search?q=",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "Odysee",
+        "url": "https://odysee.com/$/search?q=",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "Reddit",
+        "url": "https://www.reddit.com/search/?q=",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "Wiby",
+        "url": "https://wiby.me/?q=",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "Startpage",
+        "url": "https://www.startpage.com/rvd/search?query=",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "Nitter",
+        "url": "https://nitter.net/search?q=",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "SearX",
+        "url": "https://searx.org/search?q=",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "GitLab",
+        "url": "https://gitlab.com/search?search=",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "Thesaurus",
+        "url": "https://www.thesaurus.com/browse/",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "Substack",
+        "url": "https://substack.com/search/",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "Soundcloud",
+        "url": "https://soundcloud.com/search?q=",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "Bandcamp",
+        "url": "https://bandcamp.com/search?q=",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "Artvee",
+        "url": "https://artvee.com/s/?s=",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "Pexels",
+        "url": "https://www.pexels.com/search/",
+        "exeption-favicon-url": ""
+    },
+    {
+        "name": "Unsplash",
+        "url": "https://unsplash.com/s/photos/",
+        "exeption-favicon-url": ""
+    }
+]
